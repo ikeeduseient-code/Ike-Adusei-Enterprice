@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Marketplace.css';
+import './MarketPlace.css';
 import { FaRocket } from 'react-icons/fa';
 
 export function Marketplace() {
