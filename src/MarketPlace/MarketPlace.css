@@ -100,7 +100,7 @@
 }
 
 /* Mobile responsive scaling rules */
-@media (max-w: 600px) {
+@media (max-width: 600px) {
     .marketplace-section h2 {
         font-size: 28px;
     }
