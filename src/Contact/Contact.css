@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Contact Section Main Layout
+   ========================================================================== */
+.contact-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 24px;
+    box-sizing: border-box;
+    /* Premium background styling: Subtle modern gradient blending soft warm and slate gray layers */
+    background: radial-gradient(circle at 90% 10%, rgba(248, 250, 252, 0.4) 0%, rgba(241, 245, 249, 1) 100%),
+                linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.75);
+    /* Frosted glass effect pane */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.04);
+}
+
+/* ==========================================================================
+   Left Column: Quick Connect Information Block
+   ========================================================================== */
+.contact-direct-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-direct-block h2 {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+.contact-subtitle {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 40px 0;
+}
+
+.quick-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.action-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 24px;
+    border-radius: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-link:hover {
+    transform: translateY(-2px);
+}
+
+.phone-btn {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    transition: 0.3s ease;
+}
+
+.phone-btn:hover {
+    background: #1e293b;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.whatsapp-btn {
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background: #22c35e;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* ==========================================================================
+   Right Column: Minimal Form Fields Styling
+   ========================================================================== */
+.contact-form-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.02);
+}
+
+.flat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.form-group label {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.flat-form input[type="text"],
+.flat-form select,
+.flat-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    color: #0f172a;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.flat-form input[type="text"]:focus,
+.flat-form select:focus,
+.flat-form textarea:focus {
+    outline: none;
+    border-color: #cbd5e1;
+    background: #ffffff;
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #0f172a;
+    border: none;
+    border-radius: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.form-submit-btn:hover {
+    cursor:not-allowed;
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+/* ==========================================================================
+   Plugin Framework Adjustments (intl-tel-input layout scaffolding)
+   ========================================================================== */
+   
+/* 1. Main element layout containment */
+.iti {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+/* 2. Style for the MAIN telephone input box visible on the form */
+.contact-form-block .flat-form .iti input[type="tel"],
+.contact-form-block .flat-form .iti input[type="tel"]:disabled,
+.contact-form-block .flat-form .iti input[type="tel"][readonly] {
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    /* 
+       FIX: Changed padding-left to 85px to ensure the typed numbers 
+       start cleanly after the separate dial code block (+233) 
+    */
+    padding: 14px 16px 14px 85px !important; 
+    
+    box-sizing: border-box !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Ensure the absolute container holding the flag & dial code sits nicely centered */
+.iti__selected-container {
+    padding-left: 10px !important;
+}
+
+/* Optional styling to make the separate dial code look clean next to your text */
+.iti__selected-dial-code {
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    color: #475569 !important;
+    font-weight: 500 !important;
+    margin-left: 1px !important;
+}
+
+/* Main input active styling */
+.contact-form-block .flat-form .iti input[type="tel"]:focus {
+    outline: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+.iti__country-list {
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08) !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 13px !important;
+    color: #334155 !important;
+    background-color: #ffffff !important;
+    padding: 8px !important;
+    
+    /* Lock the list to the exact width of the parent input component row */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 4. Fixes the built-in search input inside the dropdown */
+.iti__country-list .iti__search-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important; 
+    padding: 10px 12px 10px 32px !important; 
+    margin: 4px 0 8px 0 !important;
+    background: #f8fafc !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    color: #0f172a !important;
+}
+
+/* Dropdown search input focus styling */
+.iti__country-list .iti__search-input:focus {
+    outline: none !important;
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   Media Query Responsive Layout Reflow
+   ========================================================================== */
+@media (max-width: 968px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 30px;
+        margin: 0 16px;
+    }
+    
+    .contact-direct-block {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .quick-action-buttons {
+        width: 100%;
+    }
+    
+    .contact-form-block {
+        padding: 24px;
+    }
+}

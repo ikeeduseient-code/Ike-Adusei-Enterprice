@@ -1,0 +1,90 @@
+* {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.home-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.welcome-note {
+    padding-top: 20px;
+    min-width: 480px;
+   
+}
+
+.welcome-note h1 {
+    font-size: 42px;
+    font-family: system-ui, sans-serif;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.welcome-note p {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;     /* Makes it all caps for a brand tagline look */
+    letter-spacing: 2px;          /* Adds premium-looking space between letters */
+    color: #475569;               /* Slate gray so it compliments the dark header */
+    margin-top: 12px;             /* Gives it breathing room below the H1 */
+    font-family: system-ui, sans-serif;
+}
+
+.what-we-do {
+    margin-top: 30px;
+    border-radius: 12px;
+    padding: 30px;
+    background: #f8fafc; /* Subtle light background instead of transparent brown */
+    border: 1px solid #e2e8f0;
+}
+
+.what-we-do p {
+    font-size: 12px;
+    padding: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.product-list {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.product-list ul {
+    display: flex;
+    flex-wrap: wrap;       /* Allows items to wrap onto the next line */
+    gap: 10px;             /* Spacing between the badges */
+    list-style: none;      /* Removes default bullet points */
+    padding: 0;
+}
+
+.product-list ul li a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    display: inline-block;
+}
+
+.product-list ul li {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 20px;   /* Pill shape */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.product-list ul li:hover {
+    border-color: #2563eb;    /* Clean business blue border */
+    background-color: #eff6ff; /* Very soft blue tint */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+}

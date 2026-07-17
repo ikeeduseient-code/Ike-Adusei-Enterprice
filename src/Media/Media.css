@@ -1,0 +1,92 @@
+.media-section {
+    padding: 60px 20px;
+}
+
+.media-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.media-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.media-header h2 {
+    font-size: 32px;
+    color: #0f172a;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.media-header p {
+    font-size: 16px;
+    color: #64748b;
+    font-family: system-ui, sans-serif;
+}
+
+/* Grid layout stays clean and responsive */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px; /* Increased gap to look elegant without card borders */
+}
+
+/* New Flat Card Design */
+.media-card-flat {
+    background: transparent; /* Makes the card flush with background */
+    border: none;            /* Removes all borders */
+    box-shadow: none;        /* Removes all shadows */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centers content inside the flat zone */
+    text-align: center;
+}
+
+.media-card-flat h3 {
+    font-size: 20px;
+    color: #0f172a;
+    font-family: system-ui, sans-serif;
+    font-weight: 600;
+}
+
+/* Icon positioning box in between name and description */
+.media-icon-wrapper {
+    margin: 20px 0;          /* Creates the clean vertical stack gap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.media-card-flat p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Flat Link Styling */
+.visit-btn-flat {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: system-ui, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+}
+
+/* Subtle Interactive Hover Effect for Flat Elements */
+.media-card-flat:hover .media-icon-wrapper {
+    transform: scale(1.15); /* Slightly pops the logo when hovered */
+}
+
+.media-card-flat:hover .visit-btn-flat {
+    gap: 8px;
+}

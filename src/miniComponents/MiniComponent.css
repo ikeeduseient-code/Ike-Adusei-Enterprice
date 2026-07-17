@@ -1,0 +1,139 @@
+/* Styling the Nav Bar Base */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; 
+    position: sticky;
+    top: 0; 
+    z-index: 1000; /* Increased to ensure it stays above all canvas/maps layers */
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0; /* Crisp minimalist border divider instead of box-shadow */
+}
+
+.page-signature {
+    display: flex;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+}
+
+.page-signature h1 {
+    font-size: 18px; 
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.page-signature span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b; 
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-signature {
+    display: flex;
+    align-items: center;
+}
+
+.nav-signature ul {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-signature ul li{
+    width: 100%;
+}
+
+.nav-signature ul li a {
+    display: block;            /* Add this: Forces the link to expand and fill the entire space */
+    width: 100%;               /* Now this will properly stretch edge-to-edge */
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 1px solid #cbd5e1; /* Smooth grey boundary */
+    color: #334155;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    white-space: nowrap;
+    box-sizing: border-box;    /* Ensures padding doesn't accidentally cause layout overflow */
+}
+
+/* Clean Hover Experience (No heavy shadow) */
+.nav-signature ul li a:hover {
+    background-color: #f1f5f9; /* Soft ash gray reaction background */
+    border-color: #0f172a;
+    transform: translateY(-1px);
+}
+
+/* Desktop-hidden Hamburger Button Trigger zone */
+.nav-bars {
+    display: none;
+    cursor: pointer;
+    color: #0f172a;
+}
+
+/* ==========================================================
+   MOBILE & TABLET RESPONSIVE RULES (Viewports less than 850px)
+   ========================================================== */
+@media (max-width: 850px) {
+    .nav-bars {
+        display: block !important;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-signature {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex !important; /* Always flex layout to center elements */
+        align-items: center;
+        justify-content: center;
+        
+        /* Smooth transition engine for fading out on scroll */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+        pointer-events: none; /* Stops intercepting clicks when closed */
+    }
+
+    /* This triggers instantly when opened, and turns off gracefully when scrolling resets the state */
+    .nav-signature.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto; /* Restores link click functionality */
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+    }
+
+    .nav-signature ul {
+        flex-direction: column;
+        width: 850%;
+        max-width: 320px;
+        padding: 40px 20px;
+        gap: 2px;
+        text-align: center;
+    }
+    
+    .nav-signature ul li {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-signature ul li a {
+        font-size: 16px;
+        width: 100%;
+        text-align: start;
+    }
+}

@@ -1,0 +1,87 @@
+/* --- Outer Layout --- */
+.brands-showcase {
+    width: 100%;
+    padding: 30px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.brands-title {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: system-ui, sans-serif;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Endless Scroll Engine --- */
+.brands-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Linear timeline makes the movement smooth and continuous without stopping */
+.brands-track {
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    animation: endlessScroll 25s linear infinite;
+}
+
+/* Individual Card Styling */
+.brand-logo-card {
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.brand-logo-card:hover {
+    transform: scale(1.08); /* Slight pop effect when hovered */
+}
+
+/* --- Custom Typographic Brand Wordmarks --- */
+.brand-wordmark {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #334155;
+    font-weight: 600;
+}
+
+.brand-hoffman { font-family: 'Georgia', serif; font-weight: 700; letter-spacing: 1px; color: #1e293b; }
+.brand-jerry { font-family: system-ui; font-weight: 800; font-style: italic; color: #475569; }
+.brand-ike { letter-spacing: 5px; font-weight: 900; color: #0f172a; border-bottom: 2px solid #cbd5e1; }
+.brand-boko { font-family: 'Courier New', monospace; font-weight: 700; color: #64748b; }
+.brand-sutai { text-transform: lowercase; font-weight: 700; letter-spacing: -0.5px; }
+.brand-raf { font-weight: 900; font-stretch: condensed; color: #020617; font-size: 15px; }
+.brand-silvercrest { font-family: 'Times New Roman', serif; font-style: italic; letter-spacing: 1px; }
+.brand-bardefu { font-weight: 400; letter-spacing: 3px; color: #334155; }
+.brand-clinet { font-family: system-ui; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+.brand-dessini { font-family: 'Georgia', serif; font-weight: 600; font-style: italic; color: #1e293b; }
+.brand-unique { font-weight: 800; letter-spacing: -1px; text-decoration: underline dotted #94a3b8; }
+.brand-chigo { font-family: monospace; font-weight: 900; letter-spacing: 2px; color: #475569; }
+
+/* --- CSS Loop Calculation --- */
+@keyframes endlessScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 20px)); /* Loops back instantly at the halfway mark invisibly */
+    }
+}
+
+@media (max-w: 768px) {
+    .brands-track {
+        gap: 25px;
+    }
+}

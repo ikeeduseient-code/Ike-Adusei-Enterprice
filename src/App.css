@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Automatically offsets ALL anchor scrolls site-wide */
+    
+}
+
+#home, 
+#marketplace, 
+#media, 
+#location, 
+#contact {
+    scroll-margin-top: 80px; /* Adjust this number to perfectly match the height of your navbar */
+}
