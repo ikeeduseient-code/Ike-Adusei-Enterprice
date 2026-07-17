@@ -1,90 +1,137 @@
+/* Clean Reset - Safe for layouts */
 * {
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base Mobile Styles (applied to screens 0px to 767px) */
 .home-main {
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 20px auto; /* Reduced top/bottom margin on mobile */
+    padding: 0 16px;   /* Slightly tighter side padding for tiny mobile screens */
 }
 
 .welcome-note {
-    padding-top: 20px;
-    min-width: 480px;
-   
+    padding-top: 10px;
+    max-width: 100%; 
 }
 
 .welcome-note h1 {
-    font-size: 42px;
+    font-size: 28px; /* Scales down smoothly on mobile so words don't snap unnaturally */
     font-family: system-ui, sans-serif;
     color: #0f172a;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .welcome-note p {
-    font-size: 18px;
+    font-size: 14px; /* Slightly smaller tagline for small screens */
     font-weight: 600;
-    text-transform: uppercase;     /* Makes it all caps for a brand tagline look */
-    letter-spacing: 2px;          /* Adds premium-looking space between letters */
-    color: #475569;               /* Slate gray so it compliments the dark header */
-    margin-top: 12px;             /* Gives it breathing room below the H1 */
+    text-transform: uppercase;     
+    letter-spacing: 1.5px;          
+    color: #475569;               
+    margin-top: 8px;             
     font-family: system-ui, sans-serif;
 }
 
 .what-we-do {
-    margin-top: 30px;
+    margin-top: 24px;
     border-radius: 12px;
-    padding: 30px;
-    background: #f8fafc; /* Subtle light background instead of transparent brown */
+    padding: 16px; /* Tight, crisp box padding for mobile viewports */
+    background: #f8fafc; 
     border: 1px solid #e2e8f0;
 }
 
-.what-we-do p {
-    font-size: 12px;
-    padding: 20px;
-    font-weight: bold;
-    font-family: sans-serif;
+.what-we-do .intro-text {
+    font-size: 14px; 
+    line-height: 1.6;
+    font-weight: 500;
+    font-family: system-ui, sans-serif;
+    color: #334155;
 }
 
 .product-list {
-    margin-top: 25px;
+    margin-top: 20px;
     width: 100%;
 }
 
 .product-list ul {
     display: flex;
-    flex-wrap: wrap;       /* Allows items to wrap onto the next line */
-    gap: 10px;             /* Spacing between the badges */
-    list-style: none;      /* Removes default bullet points */
+    flex-wrap: wrap;       
+    gap: 8px; /* Tighter gap so more elements stay on line-rows before wrapping */
+    list-style: none;      
     padding: 0;
-}
-
-.product-list ul li a {
-    color: #334155;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    font-family: system-ui, sans-serif;
-    display: inline-block;
 }
 
 .product-list ul li {
     background-color: #ffffff;
     border: 1px solid #cbd5e1;
-    padding: 8px 16px;
-    border-radius: 20px;   /* Pill shape */
+    border-radius: 20px;   
     transition: all 0.2s ease-in-out;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.product-list ul li a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 12px; /* Adaptive smaller text context on mobile links */
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    display: inline-block;
+    padding: 6px 12px; /* Tight finger-tap targeting margins */
 }
 
 .product-list ul li:hover {
-    border-color: #2563eb;    /* Clean business blue border */
-    background-color: #eff6ff; /* Very soft blue tint */
+    border-color: #2563eb;    
+    background-color: #eff6ff; 
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+}
+
+.product-list ul li:hover a {
+    color: #2563eb; 
+}
+
+
+/* ==========================================
+   Desktop Query (Applies on screens 768px and wider)
+   ========================================== */
+@media (min-width: 768px) {
+    .home-main {
+        margin: 40px auto;
+        padding: 0 24px;
+    }
+
+    .welcome-note {
+        padding-top: 20px;
+        max-width: 600px;
+    }
+
+    .welcome-note h1 {
+        font-size: 42px; /* Bigger hero text headers on desktops */
+    }
+
+    .welcome-note p {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-top: 12px;
+    }
+
+    .what-we-do {
+        margin-top: 30px;
+        padding: 30px; /* Expands box density when space is available */
+    }
+
+    .product-list {
+        margin-top: 25px;
+    }
+
+    .product-list ul {
+        gap: 10px;
+    }
+
+    .product-list ul li a {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
 }
