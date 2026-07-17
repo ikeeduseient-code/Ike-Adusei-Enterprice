@@ -279,7 +279,8 @@
     .contact-container {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 30px;
+        padding: 10px;
+
     }
     
     .contact-direct-block {
